@@ -104,6 +104,3 @@ Zaliczenie:
 	* Dodatkowe punkty za aktywność
 	* Wymagane zaliczenie laboratorium
 	* Ocena końcowa: 0.5 * wykład + 0.5 * laboratorium
-
-##### Bazy danych 1
-Zaliczenie:  
