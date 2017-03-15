@@ -1,24 +1,20 @@
 # Informacje organizacyjne
 
-##### Architektura komputerów 2
+## Architektura komputerów 2
 
-Wykład: Dr inż. Piotr Patronik  
-Konsultacje:  
-/ C-3 220
+#### Wykład, projekt
+Dr inż. Piotr Patronik  
+Konsultacje:
+* pt 17:00 - 19:00 / C-3 220
 
-Projekt: Mgr inż. Maciej Nikodem  
-Konsultacje:  
-wt 11:00 - 12:00 / C-3 105, C-3 223  
-wt 14:00 - 15:00 / C-3 105, C-3 223  
-śr 14:30 - 16:30 / C-3 105, C-3 223
+#### Laboratorium
+Dr inż. Tadeusz Tomczak  
+Konsultacje:
+* wt 13:00 - 15:00 / C-3 223
+* śr 15:00 - 17:00 / C-3 223
 
-Laboratorium: Dr inż. Tadeusz Tomczak  
-Konsultacje:  
-wt 13:00 - 15:00 / C-3 223  
-śr 15:00 - 17:00 / C-3 223  
-
-Zaliczenie:  
-Wykład  
+#### Zaliczenie
+###### Wykład
 * Koniecznie zaliczenie projektu i laboratorium  
 	* Egzamin  
 		* Test otwarty  
@@ -26,10 +22,9 @@ Wykład
 		* Ocena celująca za 24+ pkt  
 	* W ocenie końcowej uwzględnienie ocen z projektu i laboratorium
 
-Projekt
+###### Projekt
 
-
-Laboratorium  
+###### Laboratorium
 * Wymagane wszystkie zajęcia - konieczne odrabianie
 	* Ostatnie zajęcia w semestrze odróbkowe
 * Na zakończenie każdych zajęć umieszczenie pracy w repozytorium
@@ -42,65 +37,85 @@ Laboratorium
 		* Łączna liczba punktów z kartkówek <= 0.3 * liczba punktów z laboratoriów
 	* Zaliczenie od 50% punktów
 
-##### Bazy danych 1
-Wykład: [Dr inż. Dariusz Jankowski](http://kssk.pwr.edu.pl/jankowski)  
-Laboratorium: Mgr inż. Adam Merk  
-Konsultacje:  
-pt 11:00 - 13:00 / C-16 P2.8  
-Zaliczenie:
-* Wykład
-	* Aktywność na wykładach
-	* Zaliczenie kolokwiów pisemnych w połowie i na koniec semestru
-		* Zaliczenie obu kolokwiów zwalnia z egzaminu
-	* Egzamin pisemny w sesji
-	* Obecność nieobowiązkowa
-* Laboratorium
-	* Obecność obowiązkowa
-	* Ocena końcowa jest średnią ocen z poszczególnych laboratoriów
-	* Na każdych zajęciach lista zadań
-	* Kolokwium w środku semestru
+## Bazy danych 1
+#### Wykład
+[Dr inż. Dariusz Jankowski](http://kssk.pwr.edu.pl/jankowski)  
 
-##### Podstawy techniki mikroprocesorowej
-Wykład: Dr inż. Jacek Mazurkiewicz  
-Konsultacje:  
-wt 11:00 - 13:00 / C-3 225  
-śr 11:00 - 13:00 / C-3 225  
-Zaliczenie:
-* Wykład
-	* Kolokwium 08.06.2017 w godzinach wykładu
-	* Dobieg 22.06.2017 w godzinach wykładu
-	* Wymagane zaliczenie wykładu i laboratorium
-	* Ocena z laboratorium stanowi 20% oceny z wykładu
+#### Laboratorium
+Mgr inż. Adam Merk  
+Konsultacje:
+* pt 11:00 - 13:00 / C-16 P2.8
 
-##### Niezawodność i diagnostyka układów cyfrowych 2
-Projekt: Dr inż. Jacek Jarnicki  
-Konsultacje:  
+#### Zaliczenie
+###### Wykład
+* Aktywność na wykładach
+* Zaliczenie kolokwiów pisemnych w połowie i na koniec semestru
+	* Zaliczenie obu kolokwiów zwalnia z egzaminu
+* Egzamin pisemny w sesji
+* Obecność nieobowiązkowa
 
-Zaliczenie:
+###### Laboratorium
+* Obecność obowiązkowa
+* Ocena końcowa jest średnią ocen z poszczególnych laboratoriów
+* Na każdych zajęciach lista zadań
+* Kolokwium w środku semestru
 
-##### Struktury danych i złożoność obliczeniowa
-Ćwiczenia: Dr inż. Jarosław Mierzwa  
-Konsultacje:  
-Zaliczenie:
-* Ćwiczenia
-	* Lista zagadnień na każde ćwiczenia
-	* Dwa kolokwia, każde należy zaliczyć
-		* Poprawa tylko jednego
-	* Dopuszczalne dwie nieobecności
+## Niezawodność i diagnostyka układów cyfrowych 2
+#### Projekt
+Dr inż. Jacek Jarnicki  
 
-##### Technologie sieciowe 1
-Wykład: Dr hab. inż. Krzysztof Walkowiak  
-Konsultacje:  
- / C-3 114  
-Zaliczenie:  
-* Wykład
-	* Egzamin na koniec
-		* Termin zerowy na ostatnim wykładzie
-		* Min. 50% na ocenę 3.0
-		* Poprawa tylko oceny 2.0 i tylko na ocenę 3.0
-		* Dodatkowe punkty zwiększają ocenę z testu o 0.5
-	* Można przesyłać ciekawostki i nowości - dodatkowe punkty
-	* Na początku wykładu pytania dot. poprzedniego wykładu - dodatkowe punkty
-	* Dodatkowe punkty za aktywność
-	* Wymagane zaliczenie laboratorium
-	* Ocena końcowa: 0.5 * wykład + 0.5 * laboratorium
+#### Zaliczenie
+* Egzamin na koniec
+	* Termin zerowy na ostatnim wykładzie
+	* Min. 50% na ocenę 3.0
+	* Poprawa tylko oceny 2.0 i tylko na ocenę 3.0
+	* Dodatkowe punkty zwiększają ocenę z testu o 0.5
+* Można przesyłać ciekawostki i nowości - dodatkowe punkty
+* Na początku wykładu pytania dot. poprzedniego wykładu - dodatkowe punkty
+* Dodatkowe punkty za aktywność
+* Wymagane zaliczenie laboratorium
+* Ocena końcowa: 0.5 * wykład + 0.5 * laboratorium
+
+## Podstawy techniki mikroprocesorowej
+#### Wykład
+Dr inż. Jacek Mazurkiewicz  
+Konsultacje:
+* wt 11:00 - 13:00 / C-3 225
+* śr 11:00 - 13:00 / C-3 225
+
+#### Zaliczenie
+###### Wykład
+* Kolokwium 08.06.2017 w godzinach wykładu
+* Dobieg 22.06.2017 w godzinach wykładu
+* Wymagane zaliczenie wykładu i laboratorium
+* Ocena z laboratorium stanowi 20% oceny z wykładu
+
+## Struktury danych i złożoność obliczeniowa
+#### Ćwiczenia
+Dr inż. Jarosław Mierzwa  
+
+#### Zaliczenie
+###### Ćwiczenia
+* Lista zagadnień na każde ćwiczenia
+* Dwa kolokwia, każde należy zaliczyć
+	* Poprawa tylko jednego
+* Dopuszczalne dwie nieobecności
+
+## Technologie sieciowe 1
+#### Wykład
+Dr hab. inż. Krzysztof Walkowiak  
+Konsultacje:
+* / C-3 114
+
+#### Zaliczenie
+###### Wykład
+* Egzamin na koniec
+	* Termin zerowy na ostatnim wykładzie
+	* Min. 50% na ocenę 3.0
+	* Poprawa tylko oceny 2.0 i tylko na ocenę 3.0
+	* Dodatkowe punkty zwiększają ocenę z testu o 0.5
+* Można przesyłać ciekawostki i nowości - dodatkowe punkty
+* Na początku wykładu pytania dot. poprzedniego wykładu - dodatkowe punkty
+* Dodatkowe punkty za aktywność
+* Wymagane zaliczenie laboratorium
+* Ocena końcowa: `0.5 * wykład + 0.5 * laboratorium`
