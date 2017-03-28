@@ -13,6 +13,11 @@ Konsultacje:
 * wt 13:00 - 15:00 / C-3 223
 * śr 15:00 - 17:00 / C-3 223
 
+#### Materiały
+* [http://tiny.cc/oiak-materialy-2017L](http://tiny.cc/oiak-materialy-2017L)
+* [http://tiny.cc/tematy-oiak-2017L](http://tiny.cc/tematy-oiak-2017L)
+* [http://tiny.cc/oiak-zapisy-2017L](http://tiny.cc/oiak-zapisy-2017L)
+
 #### Zaliczenie
 ###### Wykład
 * Koniecznie zaliczenie projektu i laboratorium  
