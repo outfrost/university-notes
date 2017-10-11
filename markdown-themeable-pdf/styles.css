@@ -1,3 +1,7 @@
 html, body {
 	tab-size: 4;
 }
+
+p {
+	text-align: justify;
+}
