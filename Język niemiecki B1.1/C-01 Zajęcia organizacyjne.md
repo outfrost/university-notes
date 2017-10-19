@@ -6,8 +6,11 @@
 	* Do 100 punktów do zdobycia
 	* Zaliczenie od 55 punktów
 * 2 testy zaliczeniowe
-	* Pierwszy na 25 punktów
+	* Pierwszy na 25 punktów (45 min)
 	* Drugi na 35 punktów
+* 2 teksty do napisania na punkty, 5 punktów każdy
+* Prezentacja (wypowiedź) na temat związany z podręcznikiem - 15 punktów (5-10 min)
+* Do 5 punktów za aktywność
 
 Konsultacje: wt 13:15 - 15:15 / H-4 404  
 Konsultacje: cz 13:15 - 15:15 / H-4 404
