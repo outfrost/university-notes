@@ -1,4 +1,5 @@
 # Mein unvergeßliches Praktikum
+_Iwo Bujkiewicz_
 
 Vor einem Jahr arbeitete ich als Praktikant in einer IT-Firma in Mannheim.
 Der erster Tag war für mich ziemlich anstrengend, weil ich nicht wusste, was ich erwarten sollte.
