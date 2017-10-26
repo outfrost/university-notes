@@ -8,7 +8,8 @@
 * 2 testy zaliczeniowe
 	* Pierwszy na 25 punktów (45 min)
 	* Drugi na 35 punktów
-* 2 teksty do napisania na punkty, 5 punktów każdy
+* Tekst zwykły (praca domowa) na 5 punktów
+* Tekst specjalistyczny na 15 punktów
 * Prezentacja (wypowiedź) na temat związany z podręcznikiem - 15 punktów (5-10 min)
 * Do 5 punktów za aktywność
 
