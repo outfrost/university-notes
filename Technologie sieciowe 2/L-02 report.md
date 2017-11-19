@@ -1,10 +1,9 @@
-# Technologie sieciowe 2
-## Laboratorium 2. Szacowanie pasma
 
-RTP, SIP
-priorytyzacja użytkowników
 
 ### Dane firmy
+
+Bolesława Drobnera 12 l. 14
+48-300 Wrocław
 
 Parametr	| Wartość
 ------------|------------
@@ -19,7 +18,17 @@ Rozmiar backupowanej bazy danych	| 14 GB
 
 ### Sposoby generowania ruchu
 
+* ###### Web
 
+	Strony internetowe: twitter.com, 9gag.com, pwr.edu.pl pobierane przez przeglądarki Google Chrome, Mozilla Firefox
+
+* ###### Telewizja internetowa
+
+	Strumień wideo na żywo HD 1080-30p z platformy Twitch wyświetlany w przeglądarce Google Chrome
+
+* ###### Komunikator
+
+	Szyfrowane wiadomości tekstowe wysyłane i odbierane przez komunikator Telegram
 
 ### Analiza otrzymanych logów
 
