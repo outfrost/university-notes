@@ -5,3 +5,11 @@ html, body {
 p {
 	text-align: justify;
 }
+
+table {
+	font-size: 0.666667em;
+}
+
+td, th {
+	padding: 0.166667em !important;
+}
