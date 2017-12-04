@@ -14,3 +14,7 @@ table > tbody > tr > td,
 table > tfoot > tr > td {
     padding: 4px 8px;
 }
+
+img + em {
+	display: block;
+}
