@@ -74,7 +74,8 @@ Radio internetowe					| `IlośćKlientów * Bitrate`	| 640 kb/s	| 0
 Telewizja internetowa				| `IlośćKlientów * ŚrednieUżycie`	| 2965 kb/s	| 0
 Wideokonferencje					| `IlośćKlientów * ŚrednieUżycie`	| 6400 kb/s	| 5200 kb/s
 Aktualizacje oprogramowania			| `IlośćPracowników * 50 MB / 10 min`	| 27300 kb/s	| 0
-Backup bazy danych					| 
+Backup bazy danych					| `RozmiarBazyDanych * 0.2 / 30 min`	| 0	| 65250 kb/s
+**Szacowany szczytowy ruch sumaryczny**	| 			| 
 
 ### Wybór dostawcy i łącza
 
