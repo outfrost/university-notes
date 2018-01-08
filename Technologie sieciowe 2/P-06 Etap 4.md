@@ -4,7 +4,7 @@ Autorzy | Prowadzący | Termin zajęć
 -------|-------|-------
 Sebastian Korniewicz (226183)<br />Iwo Bujkiewicz (226203) | Dr inż. Róża Goścień | Czwartek TN, 13:15 - 15:00
 
-## Etap 3
+## Etap 4
 
 <div class="page-break"></div>
 
@@ -45,22 +45,15 @@ Punkty dostępowe 802.11		| 0			| 0			| 0			| 3			| 3
 | VoIP
 | Wideokonferencja
 
+<div class="page-break"></div>
+
 | Punkty dystrybucyjne 	| Lokalizacja 	| Podłączone punkty abonenckie
 |-----------------------|---------------|------------------------------
 | MDF					| A1			| A1
 | IDF1					| A2			| A2, A3
 | IDF2 					| B1			| B
 
-<div class="page-break"></div>
-
 ### 3. Analiza potrzeb użytkowników – wymagania zamawiającego
-
-Obliczyć (na podstawie danych od Prowadzącego) i przedstawić oszacowanie transferu danych w
-kluczowych punktach sieci: łączach szkieletowych (w tym pomiędzy budynkami), łączach do serwerów,
-łączu do Internetu (w obu kierunkach), itd. Należy zamieścić kompletne obliczenia (a nie same wyniki
-końcowe).
-Przedstawić pozostałe wymagania, w tym dotyczące bezpieczeństwa i niezawodności sieci.
-
 
 Grupa rob. \ Aplikacja	| Przeglądarka	| 	| Wideokonferencja	| 	| VoIP	| 	| Klient FTP	| 	| Komunikator | |
 ----|----|----|----|----|----|----|----|----|----|----
@@ -96,6 +89,8 @@ Architekci	| 1786	| 470	| 1880	| 1880	| 940	| 940	| 4324	| 799	| 705	| 705	| 963
 Projektanci	| 1472	| 320	| 0	| 0	| 640	| 640	| 1568	| 448	| 480	| 480	| 4160	| 1888
 Wi-Fi	| 0	| 0	| 0	| 0	| 0	| 0	| 0	| 0	| 0	| 0	| 0	| 0
 |	| 	| 	| 	| 	| 	| 	| 	| 	| 	| Suma	| 20945	| 10932
+
+<div class="page-break"></div>
 
 B1	| Przeglądarka	| 	| Wideokonferencja	| 	| VoIP	| 	| Klient FTP	| 	| Komunikator	| 	| Suma	| 	|
 ----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -201,9 +196,19 @@ Serwer FTP	| 50	| 350	| 16	| 800	| 5600
 
 Sieć wewnętrzna zostanie podzielona na 5 VLANów pracowniczych, każda dla innej grupy roboczej, a także osobny VLAN dla drukarek oraz osobny VLAN dla urządzeń Wi-Fi.
 
-![Schemat](ss.jpg)
+![Schemat](ss.png)
 
 <div class="page-break"></div>
+
+Przyjęto następujący podział VLANów:
+
+Nazwa sieci         | Grupa robocza
+----|----
+VLAN_engineers      | konstruktorzy
+VLAN_architects     | architekci
+VLAN_designers      | projektanci
+VLAN_P              | drukarki
+WLAN                | siec bezprzewodowa
 
 #### 5.2. Wybór urządzeń sieciowych
 
@@ -217,24 +222,123 @@ SA1-1 - SA1-3 | 2   | WS-C3650-48TQ-L
 SA2-1 - SA2-6 | 2   | WS-C3650-48TQ-L
 SB1 - SB4 | 2   | WS-C3650-48TQ-L
 
-* WS-C3650-48TQ-L
+* Cisco WS-C3650-48TQ-L
 
-	switch posiadający 48 portów 1 GigE oraz 4 porty 10 GigE
+	switch posiadający 48 portów 1 GigE oraz 4 porty 10 GigE SFP+
 
-* WS-C4500X-16SFP+
+* Cisco WS-C4500X-16SFP+
 
-	switch posiadający 16 portów 10 GigE
+	switch posiadający 16 portów 10 GigE SFP+
+
+Urządzenia opisane jako SA1-\*, SA2-\* oraz SB\* zostaną połączone w tzw. 'stosy'. Dzięki takiemu rozwiązaniu będą funkcjonować logicznie jak pojedynczy switch z dużą ilością portów. W przypadku WS-C3650-48TQ-L możliwe jest połączenie do 9 urządzeń w 'stos'.
 
 ##### Router
 
-Oznaczenie  |   Nazwa modelu
-----|----
-R1	|   Cisco ISR4451-X/K9
+Wykorzystywany router, będący bramą dostępu do Internetu, to model Cisco ISR4451-X/K9, wyposażony w 4 porty SFP i funkcję _load balancing_, pozwalającą na zrównoważenie obciążenia pomiędzy dwoma niezależnymi łączami internetowymi.
 
 ##### Firewalle
 
-Oba wykorzystywane firewalle to model ASA5545-K9 wyposażony w rozszerzenie I/O z portami SFP.
+Oba wykorzystywane firewalle to model Cisco ASA5545-K9 wyposażony w rozszerzenie I/O z portami SFP.
 
 ##### Access pointy
 
 Jako punkty dostępowe Wi-Fi wykorzystywane są urządzenia UAP-AC-LITE firmy Ubiquiti Networks.
+
+<div class="page-break"></div>
+
+#### 5.3. Projekt adresacji IP
+
+Nazwa sieci         |	adres sieci	|	bramka domyślna	|	Broadcast   | Serwer DHCP
+----|----|----|----|----
+LAN_Outer           |   10.0.0.0/28 |   10.0.0.1        |   10.0.0.15   | ---
+LAN_Inner           |   10.0.0.16/28    | 10.0.0.17     |   10.0.0.31   | ---
+WAN_Channel         |   10.0.0.32/29    | 10.0.0.33     |   10.0.0.39   | ---
+VLAN_engineers		|	10.0.1.0/24	|	10.0.1.1		|	10.0.1.255  | S2
+VLAN_architects		|	10.0.2.0/24	|	10.0.2.1		|	10.0.2.255  | S2
+VLAN_designers	    |	10.0.3.0/24	|	10.0.3.1		|	10.0.3.255  | S2
+VLAN_P              |   10.0.4.0/24	|	10.0.4.1		|	10.0.4.255  | S2
+WLAN                |	10.0.5.0/24	|	10.0.5.1		|	10.0.5.255  | S2
+
+Sieć oznaczona jako `WAN_Channel` służyć będzie do komunikacji pomiędzy R1 a S1. Sieć `LAN_Outer` znajdować się będzie po 'wewnętrznej' stronie S1 i obejmować będzie WebServer, FTPServer oraz połączenie do S2. Sieć `LAN_Inner` znajdować się będzie po 'wewnętrznej' stronie S2 i obejmować będzie Server1, Server2 oraz adresy konsoli zarządzania pozostałych switchy.
+
+#### 5.4. Projekt konfiguracji urządzeń
+
+##### Konfiguracja VLAN
+
+Oznaczenie  | Porty         | VLANy
+------------|---------------|--------
+SA1-1       | 01X-41X       | VLAN_engineers
+SA1-2       | 01X-48X       | VLAN_architects
+SA1-3       | 01X-08X       | VLAN_architects
+SA1-3       | 09X-15X       | VLAN_designers
+SA1-3       | 16X           | VLAN_P
+SA2-1       | 01X-48X       | VLAN_engineers
+SA2-2       | 01X-28X       | VLAN_engineers
+SA2-3       | 01X-48X       | VLAN_architects
+SA2-4       | 01X-27X       | VLAN_architects
+SA2-4       | 28X-31X       | VLAN_P
+SA2-5       | 01X-48X       | VLAN_designers
+SA2-6       | 01X-44X       | VLAN_designers
+SB1         | 01X-48X       | VLAN_engineers
+SB2         | 01X-17X       | VLAN_engineers
+SB2         | 18X-48X       | VLAN_architects
+SB3         | 01X-10X       | VLAN_architects
+SB3         | 11X-48X       | VLAN_designers
+SB4         | 01X-17X       | VLAN_designers
+SB4         | 18X-22X       | VLAN_P
+SB4         | 23X-28X       | WLAN
+
+##### Połączenia trunk
+
+Połączenia pomiędzy S2 i SA1-1, S2 i SA2-1 oraz S2 i SB1 zostaną skonfigurowane jako połączenia trunk, aby możliwa była komunikacja wewnątrz i między VLANami na całym obszarze siedziby firmy.
+
+##### Konfiguracja WLAN
+
+W celu zapewnienia bezpieczeństwa, urządzenia bezprzewodowe będą włączone w osobny VLAN. Przesył danych będzie chroniony protokołem WPA2-PSK z szyfrowaniem AES, a dodatkowym zabezpieczeniem będzie filtrowanie urządzeń na podstawie adresu MAC.
+
+#### 5.5. Projekt podłączenia do Internetu.
+
+                                | Moico     | Orange
+--------------------------------|-----------|------------
+Prędkosc download               | 1000 Mb/s | 600 Mb/s
+Prędkosc upload                 | 1000 Mb/s | 60 Mb/s
+Liczba adresow zewnetrznych     | 1         | 4
+Interfejs koncowy               | SFP+      | SFP+
+Oplata aktywacyjna              | 99 PLN    |
+Abonament                       | 155 PLN   | 146,37 PLN
+
+#### 5.6. Analiza bezpieczeństwa i niezawodności sieci.
+
+Podstawowymi rodzajami niebezpieczeństw, które mogą potencjalnie zagrażać funkcjonowaniu sieci firmowej, są ataki z zewnątrz (połączenia przychodzące z użyciem specjalnie przygotowanych pakietów wykorzystujących luki w zabezpieczeniach oprogramowania lub ograniczenia infrastruktury sieciowej), wprowadzanie do systemów firmy złośliwego oprogramowania oraz awarie zasilania.
+
+Przed atakami z zewnątrz sieć bronić się będzie za pomocą blokad portów TCP/UDP, filtrowania pakietów w sprzętowych firewallach oraz firewalli programowych na stacjach roboczych i serwerach. Dwa sprzętowe firewalle zastosowano w celu umożliwienia docierania ruchu przychodzącego z zewnątrz w kierunku serwerów WW oraz FTP, ale zablokowania takowego w 'głębszej' części sieci.
+
+Przed złośliwym oprogramowaniem infrastruktura sieciowa raczej nie jest w stanie firmy obronić, toteż dodatkowa ostrożność będzie musiała zostać zachowana przez użtkowników, a administrator będzie musiał dopilnować częstego aktualizowania oprogramowania antywirusowego (chyba, że firma będzie wykorzystywać systemy operacyjne z rodziny Unix).
+
+W celu zabezpieczenia sieci przed awarią zasilania, sugeruje się wyposażyć szafy teleinformatyczne w zasilacze awaryjne (_uninterruptible power supply_) renomowanej firmy (np. Eaton, Liebert/Emerson) o mocy i pojemności akumulatorów odpowiedniej do zasilenia wielu urządzeń sieciowych niezależnie (np. osobno R1, Firewall i S1, osobno Firewall i S2 oraz osobno 'stosy' switchy SA1-\*, SA2-\* i SB\*). Ważna jest tutaj charakterystyka _online_ zasilaczy awaryjnych, która pozwoli dostarczać prąd do urządzeń sieciowych bez najmniejszych przerw i zakłóceń.
+
+<div class="page-break"></div>
+
+#### 5.7. Kosztorys.
+
+Nazwa                   | Ilość | Cena jednostkowa [PLN]    | Wartość [PLN]
+------------------------|-------|---------------------------|------------
+Cisco WS-C3650-48TQ-L   | 13    | 13296.81                  | 172858.50
+Cisco WS-C4500X-16SFP+  | 2     | 19481.37                  | 38962.74
+Cisco ISR4451-X/K9      | 1     | 27830.53                  | 27830.53
+Cisco ASA5545-K9        | 2     | 31798.96                  | 63597.92
+Aktywacja operatorska   | 1     | 99.00                     | 99.00
+Miesiąc abonamentu      | 24    | 301.37                    | 7232.88
+**Suma**                |       |                           | 310581.57
+
+Ceny na podstawie informacji z http://www.router-switch.com oraz stron internetowych operatorów.
+
+### 6. Karty katalogowe proponowanych urządzeń
+
+Nazwa                   | Dane techniczne
+------------------------|------------------
+Cisco WS-C3650-48TQ-L   | https://www.cisco.com/c/en/us/support/switches/catalyst-3650-48tq-l-switch/model.html
+Cisco WS-C4500X-16SFP+  | https://www.cisco.com/c/en/us/support/switches/catalyst-4500x-16-sfp-switch/model.html
+Cisco ISR4451-X/K9      | https://www.cisco.com/c/en/us/support/routers/4451-x-integrated-services-router-isr/model.html
+Cisco ASA5545-K9        | https://www.cisco.com/c/en/us/support/security/asa-5545-x-adaptive-security-appliance/model.html
+Ubiquiti UAP-AC-LITE    | https://www.ubnt.com/unifi/unifi-ap-ac-lite/
