@@ -217,7 +217,7 @@ WLAN                | siec bezprzewodowa
 Oznaczenie  | Warstwa pracy |   Nazwa modelu
 ----|----|---
 S1  | 3 | WS-C4500X-16SFP+
-S2  | 2 | WS-C4500X-16SFP+
+S2  | 3 | WS-C4500X-16SFP+
 SA1-1 - SA1-3 | 2   | WS-C3650-48TQ-L
 SA2-1 - SA2-6 | 2   | WS-C3650-48TQ-L
 SB1 - SB4 | 2   | WS-C3650-48TQ-L
@@ -294,7 +294,7 @@ Połączenia pomiędzy S2 i SA1-1, S2 i SA2-1 oraz S2 i SB1 zostaną skonfigurow
 
 ##### Konfiguracja WLAN
 
-W celu zapewnienia bezpieczeństwa, urządzenia bezprzewodowe będą włączone w osobny VLAN. Przesył danych będzie chroniony protokołem WPA2-PSK z szyfrowaniem AES, a dodatkowym zabezpieczeniem będzie filtrowanie urządzeń na podstawie adresu MAC.
+W celu zapewnienia bezpieczeństwa oraz uproszczenia obsługi sieci, urządzenia bezprzewodowe będą włączone w osobny VLAN. Przesył danych będzie chroniony protokołem WPA2-PSK z szyfrowaniem AES, a dodatkowym zabezpieczeniem będzie filtrowanie urządzeń na podstawie adresu MAC.
 
 #### 5.5. Projekt podłączenia do Internetu.
 
@@ -327,9 +327,10 @@ Cisco WS-C3650-48TQ-L   | 13    | 13296.81                  | 172858.50
 Cisco WS-C4500X-16SFP+  | 2     | 19481.37                  | 38962.74
 Cisco ISR4451-X/K9      | 1     | 27830.53                  | 27830.53
 Cisco ASA5545-K9        | 2     | 31798.96                  | 63597.92
+Ubiquiti UAP-AC-LITE	| 6		| 320.00					| 1920.00
 Aktywacja operatorska   | 1     | 99.00                     | 99.00
 Miesiąc abonamentu      | 24    | 301.37                    | 7232.88
-**Suma**                |       |                           | 310581.57
+**Suma**                |       |                           | 312501.57
 
 Ceny na podstawie informacji z http://www.router-switch.com oraz stron internetowych operatorów.
 
