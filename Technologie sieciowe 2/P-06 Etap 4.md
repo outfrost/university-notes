@@ -298,7 +298,7 @@ W celu zapewnienia bezpieczeństwa oraz uproszczenia obsługi sieci, urządzenia
 
 #### 5.5. Projekt podłączenia do Internetu.
 
-                                | Moico     | Orange
+Parametr połączenia				| Moico     | Orange
 --------------------------------|-----------|------------
 Prędkosc download               | 1000 Mb/s | 600 Mb/s
 Prędkosc upload                 | 1000 Mb/s | 60 Mb/s
