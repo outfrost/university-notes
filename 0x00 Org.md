@@ -95,6 +95,15 @@ Konsultacje:
 * Wymagane zaliczenie wykładu i laboratorium
 * Ocena z laboratorium stanowi 20% oceny z wykładu
 
+## Projektowanie systemów internetowych i mobilnych
+#### Wykład
+Dr inż. Konrad Jackowski
+
+#### Zaliczenie
+###### Wykład
+* Od 4.0 przepis oceny z projektu, poniżej - test w formie ustnej
+* Ocena końcowa jest średnią arytmetyczną oceny z testu i oceny z projektu
+
 ## Struktury danych i złożoność obliczeniowa
 #### Ćwiczenia
 Dr inż. Jarosław Mierzwa  
@@ -105,6 +114,20 @@ Dr inż. Jarosław Mierzwa
 * Dwa kolokwia, każde należy zaliczyć
 	* Poprawa tylko jednego
 * Dopuszczalne dwie nieobecności
+
+### Powtórka
+#### Ćwiczenia
+[Dr inż. Tomasz Kapłon](http://tomasz.kaplon.staff.iiar.pwr.edu.pl)  
+Konsultacje:
+* wt 11:00 - 13:00 / {C-3 103, C-3 104, C-3 312}
+* śr 09:00 - 11:00 / C-3 312
+
+#### Zaliczenie
+###### Ćwiczenia
+* Zaliczenie od 42 punktów
+	* 12x kartkówka (5 ~ 15 min) - 0 za nieobecność, 2.0 ~ 5.0 za napisanie
+		* Tematy z poprzednich zajęć
+	* 2x odpowiedź przy tablicy - 0 za nieobecność, 2.0 ~ 5.0 za odpowiedź
 
 ## Technologie sieciowe 1
 #### Wykład
