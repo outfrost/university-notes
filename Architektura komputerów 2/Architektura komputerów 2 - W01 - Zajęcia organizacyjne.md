@@ -2,7 +2,7 @@
 
 ## Wykład 1. Zajęcia organizacyjne
 
-_"Kod nieprzetestowany nie działa."_
+> Kod nieprzetestowany nie działa.
 
 ###### Cele projektu
 * rozpoznanie, określenie i samodzielne udokumentowanie (rysunki, szkice, notatki, przykłady, własne implementacje) przedstawionych koncepcji architektury/artmetyki komputerów
