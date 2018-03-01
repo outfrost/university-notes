@@ -1,5 +1,7 @@
 # Informacje organizacyjne
 
+--------------------------------
+
 ## Architektura komputerów 2
 
 #### Wykład, projekt
@@ -42,6 +44,8 @@ Konsultacje:
 		* Łączna liczba punktów z kartkówek <= 0.3 * liczba punktów z laboratoriów
 	* Zaliczenie od 50% punktów
 
+--------------------------------
+
 ## Bazy danych 1
 #### Wykład
 [Dr inż. Dariusz Jankowski](http://kssk.pwr.edu.pl/jankowski)  
@@ -65,6 +69,8 @@ Konsultacje:
 * Na każdych zajęciach lista zadań
 * Kolokwium w środku semestru
 
+--------------------------------
+
 ## Niezawodność i diagnostyka układów cyfrowych 2
 #### Projekt
 Dr inż. Jacek Jarnicki  
@@ -81,6 +87,8 @@ Dr inż. Jacek Jarnicki
 * Wymagane zaliczenie laboratorium
 * Ocena końcowa: 0.5 * wykład + 0.5 * laboratorium
 
+--------------------------------
+
 ## Podstawy techniki mikroprocesorowej
 #### Wykład
 Dr inż. Jacek Mazurkiewicz  
@@ -95,6 +103,14 @@ Konsultacje:
 * Wymagane zaliczenie wykładu i laboratorium
 * Ocena z laboratorium stanowi 20% oceny z wykładu
 
+--------------------------------
+
+## Projektowanie gier komputerowych
+#### Wykład
+Dr inż. Piotr Sobolewski
+
+--------------------------------
+
 ## Projektowanie systemów internetowych i mobilnych
 #### Wykład
 Dr inż. Konrad Jackowski
@@ -103,6 +119,8 @@ Dr inż. Konrad Jackowski
 ###### Wykład
 * Od 4.0 przepis oceny z projektu, poniżej - test w formie ustnej
 * Ocena końcowa jest średnią arytmetyczną oceny z testu i oceny z projektu
+
+--------------------------------
 
 ## Struktury danych i złożoność obliczeniowa
 #### Ćwiczenia
@@ -129,6 +147,18 @@ Konsultacje:
 		* Tematy z poprzednich zajęć
 	* 2x odpowiedź przy tablicy - 0 za nieobecność, 2.0 ~ 5.0 za odpowiedź
 
+--------------------------------
+
+## Sztuczna inteligencja
+#### Ćwiczenia
+[Mgr inż. Antoni Sterna](http://antoni.sterna.staff.iiar.pwr.edu.pl)
+
+#### Zaliczenie
+###### Ćwiczenia
+* Kolokwium na koniec
+
+--------------------------------
+
 ## Technologie sieciowe 1
 #### Wykład
 Dr hab. inż. Krzysztof Walkowiak  
@@ -147,6 +177,8 @@ Konsultacje:
 * Dodatkowe punkty za aktywność
 * Wymagane zaliczenie laboratorium
 * Ocena końcowa: `0.5 * wykład + 0.5 * laboratorium`
+
+--------------------------------
 
 ## Układy cyfrowe i systemy wbudowane 2
 ## Wykład
