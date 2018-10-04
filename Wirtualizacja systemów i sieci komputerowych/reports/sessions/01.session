@@ -1,0 +1,94 @@
+From fe80::be5f:f4ff:fe1b:60b2%eth1: icmp_seq=4 Destination unreachable: Address unreachable
+From fe80::be5f:f4ff:fe1b:60b2%eth1: icmp_seq=5 Destination unreachable: Address unreachable
+From fe80::be5f:f4ff:fe1b:60b2%eth1: icmp_seq=6 Destination unreachable: Address unreachable
+^C
+--- fe80::4388:13c2:8dc3:7a54 ping statistics ---
+7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 138ms
+pipe 3
+student@ksskn:~$ man ping
+student@ksskn:~$ ping -I eth0 fe80::4388:13c2:8dc3:7a54
+ping6: Warning: source address might be selected on device other than eth0.
+PING fe80::4388:13c2:8dc3:7a54(fe80::4388:13c2:8dc3:7a54) from :: eth0: 56 data bytes
+ping: sendmsg: Network is unreachable
+ping: sendmsg: Network is unreachable
+ping: sendmsg: Network is unreachable
+^C
+--- fe80::4388:13c2:8dc3:7a54 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 37ms
+
+student@ksskn:~$ clear
+
+student@ksskn:~$ ifconfig -a
+eth0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        ether 74:da:38:a1:44:3e  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.255.165  netmask 255.255.255.0  broadcast 192.168.255.255
+        inet6 fe80::be5f:f4ff:fe1b:60b2  prefixlen 64  scopeid 0x20<link>
+        ether bc:5f:f4:1b:60:b2  txqueuelen 1000  (Ethernet)
+        RX packets 53686  bytes 17398454 (16.5 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7448  bytes 905392 (884.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 17
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 35  bytes 4458 (4.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 35  bytes 4458 (4.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@ksskn:~$ ping 10.0.2.15
+PING 10.0.2.15 (10.0.2.15) 56(84) bytes of data.
+^C
+--- 10.0.2.15 ping statistics ---
+29 packets transmitted, 0 received, 100% packet loss, time 707ms
+
+student@ksskn:~$ ping 10.0.20.1
+PING 10.0.20.1 (10.0.20.1) 56(84) bytes of data.
+^C
+--- 10.0.20.1 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+student@ksskn:~$ ping 10.0.20.2
+PING 10.0.20.2 (10.0.20.2) 56(84) bytes of data.
+^C
+--- 10.0.20.2 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 81ms
+
+student@ksskn:~$ ping 10.0.2.2
+PING 10.0.2.2 (10.0.2.2) 56(84) bytes of data.
+64 bytes from 10.0.2.2: icmp_seq=1 ttl=247 time=46.6 ms
+64 bytes from 10.0.2.2: icmp_seq=2 ttl=247 time=47.1 ms
+^C
+--- 10.0.2.2 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 2ms
+rtt min/avg/max/mdev = 46.605/46.830/47.056/0.312 ms
+student@ksskn:~$ ping 10.0.2.15
+PING 10.0.2.15 (10.0.2.15) 56(84) bytes of data.
+^C
+--- 10.0.2.15 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 26ms
+
+student@ksskn:~$ ping 10.0.2.15
+PING 10.0.2.15 (10.0.2.15) 56(84) bytes of data.
+^C
+--- 10.0.2.15 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+
+student@ksskn:~$ ping 192.168.255.191
+PING 192.168.255.191 (192.168.255.191) 56(84) bytes of data.
+64 bytes from 192.168.255.191: icmp_seq=1 ttl=64 time=0.387 ms
+64 bytes from 192.168.255.191: icmp_seq=2 ttl=64 time=0.247 ms
+^C
+--- 192.168.255.191 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 14ms
+rtt min/avg/max/mdev = 0.247/0.317/0.387/0.070 ms
+student@ksskn:~$

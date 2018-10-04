@@ -1,0 +1,397 @@
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::4388:13c2:8dc3:7a54  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 110  bytes 15747 (15.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::c96a:84ac:c6a0:2deb  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 11  bytes 1652 (1.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 111  bytes 10937 (10.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 107  bytes 7962 (7.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 107  bytes 7962 (7.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$ tracepath -b 156.17.43.30
+ 1?: [LOCALHOST]                      pmtu 1500
+ 1:  gateway (10.0.2.2)                                    0.319ms
+ 1:  gateway (10.0.2.2)                                    0.287ms
+ 2:  syriusz.kssk.pwr.wroc.pl (156.17.43.30)               1.019ms reached
+     Resume: pmtu 1500 hops 2 back 64
+student@KSSK:~$ ping 10.0.2.2
+PING 10.0.2.2 (10.0.2.2) 56(84) bytes of data.
+64 bytes from 10.0.2.2: icmp_seq=1 ttl=64 time=0.443 ms
+64 bytes from 10.0.2.2: icmp_seq=2 ttl=64 time=0.259 ms
+64 bytes from 10.0.2.2: icmp_seq=3 ttl=64 time=0.265 ms
+64 bytes from 10.0.2.2: icmp_seq=4 ttl=64 time=0.194 ms
+64 bytes from 10.0.2.2: icmp_seq=5 ttl=64 time=0.259 ms
+64 bytes from 10.0.2.2: icmp_seq=6 ttl=64 time=0.299 ms
+64 bytes from 10.0.2.2: icmp_seq=7 ttl=64 time=0.297 ms
+64 bytes from 10.0.2.2: icmp_seq=8 ttl=64 time=0.275 ms
+^C
+--- 10.0.2.2 ping statistics ---
+8 packets transmitted, 8 received, 0% packet loss, time 7157ms
+rtt min/avg/max/mdev = 0.194/0.286/0.443/0.068 ms
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::4388:13c2:8dc3:7a54  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 304  bytes 48191 (48.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::c96a:84ac:c6a0:2deb  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 48  bytes 6507 (6.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 155  bytes 18980 (18.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 319  bytes 23532 (23.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 319  bytes 23532 (23.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$ httpd
+No command 'httpd' found, did you mean:
+ Command 'xttpd' from package 'xtide' (universe)
+ Command 'http' from package 'httpie' (universe)
+httpd: command not found
+student@KSSK:~$ man http
+No manual entry for http
+student@KSSK:~$ apache
+No command 'apache' found, did you mean:
+ Command 'apache2' from package 'apache2-bin' (main)
+apache: command not found
+student@KSSK:~$ apache2-bin
+apache2-bin: command not found
+student@KSSK:~$ apache2
+The program 'apache2' is currently not installed. You can install it by typing:
+sudo apt install apache2-bin
+student@KSSK:~$ nginx
+The program 'nginx' can be found in the following packages:
+ * nginx-core
+ * nginx-extras
+ * nginx-full
+ * nginx-light
+Try: sudo apt install <selected package>
+student@KSSK:~$ sudo apt install apache2-bin
+[sudo] password for student:
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap liblua5.2-0
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+The following NEW packages will be installed:
+  apache2-bin libapr1 libaprutil1 libaprutil1-dbd-sqlite3 libaprutil1-ldap
+  liblua5.2-0
+0 upgraded, 6 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1271 kB of archives.
+After this operation, 4848 kB of additional disk space will be used.
+Do you want to continue? [Y/n]
+Get:1 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 libapr1 amd64 1.6.2-1 [90,9 kB]
+Get:2 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 libaprutil1 amd64 1.6.0-2 [84,2 kB]
+Get:3 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.0-2 [10,5 kB]
+Get:4 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 libaprutil1-ldap amd64 1.6.0-2 [8660 B]
+Get:5 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 liblua5.2-0 amd64 5.2.4-1.1build1 [108 kB]
+Get:6 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 apache2-bin amd64 2.4.27-2ubuntu3 [968 kB]
+Fetched 1271 kB in 0s (5290 kB/s)
+Selecting previously unselected package libapr1:amd64.
+(Reading database ... 165951 files and directories currently installed.)
+Preparing to unpack .../0-libapr1_1.6.2-1_amd64.deb ...
+Unpacking libapr1:amd64 (1.6.2-1) ...
+Selecting previously unselected package libaprutil1:amd64.
+Preparing to unpack .../1-libaprutil1_1.6.0-2_amd64.deb ...
+Unpacking libaprutil1:amd64 (1.6.0-2) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../2-libaprutil1-dbd-sqlite3_1.6.0-2_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.0-2) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../3-libaprutil1-ldap_1.6.0-2_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.0-2) ...
+Selecting previously unselected package liblua5.2-0:amd64.
+Preparing to unpack .../4-liblua5.2-0_5.2.4-1.1build1_amd64.deb ...
+Unpacking liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../5-apache2-bin_2.4.27-2ubuntu3_amd64.deb ...
+Unpacking apache2-bin (2.4.27-2ubuntu3) ...
+Setting up libapr1:amd64 (1.6.2-1) ...
+Processing triggers for libc-bin (2.26-0ubuntu2.1) ...
+Setting up libaprutil1:amd64 (1.6.0-2) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Setting up liblua5.2-0:amd64 (5.2.4-1.1build1) ...
+Setting up libaprutil1-ldap:amd64 (1.6.0-2) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.0-2) ...
+Setting up apache2-bin (2.4.27-2ubuntu3) ...
+Processing triggers for libc-bin (2.26-0ubuntu2.1) ...
+student@KSSK:~$ apache3
+No command 'apache3' found, did you mean:
+ Command 'apache2' from package 'apache2-bin' (main)
+apache3: command not found
+student@KSSK:~$ apache2
+apache2: Could not open configuration file /etc/apache2/apache2.conf: No such file or directory
+student@KSSK:~$ man apache2
+student@KSSK:~$ sudo apache2 -k start
+apache2: Could not open configuration file /etc/apache2/apache2.conf: No such file or directory
+student@KSSK:~$ man apache2
+student@KSSK:~$ man apache2ctl
+No manual entry for apache2ctl
+student@KSSK:~$ apache2ctl
+The program 'apache2ctl' is currently not installed. You can install it by typing:
+sudo apt install apache2
+student@KSSK:~$ sudo apt install apache2
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  apache2-data apache2-utils
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom
+The following NEW packages will be installed:
+  apache2 apache2-data apache2-utils
+0 upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
+Need to get 340 kB of archives.
+After this operation, 1751 kB of additional disk space will be used.
+Do you want to continue? [Y/n]
+Get:1 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 apache2-utils amd64 2.4.27-2ubuntu3 [82,5 kB]
+Get:2 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 apache2-data all 2.4.27-2ubuntu3 [161 kB]
+Get:3 http://pl.archive.ubuntu.com/ubuntu artful/main amd64 apache2 amd64 2.4.27-2ubuntu3 [95,8 kB]
+Fetched 340 kB in 0s (1736 kB/s)
+Selecting previously unselected package apache2-utils.
+(Reading database ... 166113 files and directories currently installed.)
+Preparing to unpack .../apache2-utils_2.4.27-2ubuntu3_amd64.deb ...
+Unpacking apache2-utils (2.4.27-2ubuntu3) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../apache2-data_2.4.27-2ubuntu3_all.deb ...
+Unpacking apache2-data (2.4.27-2ubuntu3) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../apache2_2.4.27-2ubuntu3_amd64.deb ...
+Unpacking apache2 (2.4.27-2ubuntu3) ...
+Processing triggers for ufw (0.35-5) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+Setting up apache2-utils (2.4.27-2ubuntu3) ...
+Setting up apache2-data (2.4.27-2ubuntu3) ...
+Processing triggers for systemd (234-2ubuntu12.1) ...
+Processing triggers for man-db (2.7.6.1-2) ...
+Setting up apache2 (2.4.27-2ubuntu3) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.
+Processing triggers for ureadahead (0.100.0-20) ...
+Processing triggers for systemd (234-2ubuntu12.1) ...
+Processing triggers for ufw (0.35-5) ...
+student@KSSK:~$ man apache2ctl
+student@KSSK:~$ apache2ctl start
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message
+(13)Permission denied: AH00072: make_sock: could not bind to address [::]:80
+(13)Permission denied: AH00072: make_sock: could not bind to address 0.0.0.0:80
+no listening sockets available, shutting down
+AH00015: Unable to open logs
+Action 'start' failed.
+The Apache error log may have more information.
+student@KSSK:~$ sudo apache2ctl start
+Invoking 'systemctl start apache2'.
+Use 'systemctl status apache2' for more info.
+student@KSSK:~$ systemctl status apache2
+● apache2.service - The Apache HTTP Server
+   Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset:
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: active (running) since Thu 2018-10-04 13:38:43 CEST; 35s ago
+ Main PID: 3176 (apache2)
+    Tasks: 55 (limit: 4915)
+   CGroup: /system.slice/apache2.service
+           ├─3176 /usr/sbin/apache2 -k start
+           ├─3177 /usr/sbin/apache2 -k start
+           └─3178 /usr/sbin/apache2 -k start
+
+paź 04 13:38:43 KSSK systemd[1]: Starting The Apache HTTP Server...
+paź 04 13:38:43 KSSK apachectl[3165]: AH00558: apache2: Could not reliably deter
+paź 04 13:38:43 KSSK systemd[1]: Started The Apache HTTP Server.
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 397  bytes 63425 (63.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::c96a:84ac:c6a0:2deb  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 2967  bytes 3601977 (3.6 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1389  bytes 131006 (131.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 550  bytes 52136 (52.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 550  bytes 52136 (52.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$ sudo ifconfig enp0s8 10.0.20.2 netmask 255.255.255.0
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.20.2  netmask 255.255.255.0  broadcast 10.0.20.255
+        inet6 fe80::a00:27ff:fe47:c913  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 458  bytes 70088 (70.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::c96a:84ac:c6a0:2deb  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 6135  bytes 7807518 (7.8 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2354  bytes 200998 (200.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 614  bytes 58378 (58.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 614  bytes 58378 (58.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$ sudo ifconfig enp0s8 down\
+> ;
+student@KSSK:~$ sudo ifconfig enp0s8 down
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.20.2  netmask 255.255.255.0  broadcast 10.0.20.255
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 458  bytes 70088 (70.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::c96a:84ac:c6a0:2deb  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 6429  bytes 7829051 (7.8 MB)
+        RX errors 0  dropped 6  overruns 0  frame 0
+        TX packets 2448  bytes 207759 (207.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 623  bytes 59040 (59.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 623  bytes 59040 (59.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$ sudo ifconfig enp0s17 down
+student@KSSK:~$ sudo ifconfig enp0s17 up
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.20.2  netmask 255.255.255.0  broadcast 10.0.20.255
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 458  bytes 70088 (70.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 6623  bytes 7850735 (7.8 MB)
+        RX errors 0  dropped 10  overruns 0  frame 0
+        TX packets 2489  bytes 210893 (210.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 737  bytes 68280 (68.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 737  bytes 68280 (68.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$ ifconfig -a
+enp0s8: flags=4098<BROADCAST,MULTICAST>  mtu 1500
+        inet 10.0.20.2  netmask 255.255.255.0  broadcast 10.0.20.255
+        ether 08:00:27:47:c9:13  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 458  bytes 70088 (70.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+enp0s17: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.255.191  netmask 255.255.255.0  broadcast 192.168.255.255
+        inet6 fe80::c96a:84ac:c6a0:2deb  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:4c:ac:18  txqueuelen 1000  (Ethernet)
+        RX packets 7124  bytes 8021236 (8.0 MB)
+        RX errors 0  dropped 10  overruns 0  frame 0
+        TX packets 2671  bytes 247346 (247.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 932  bytes 82244 (82.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 932  bytes 82244 (82.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+student@KSSK:~$
