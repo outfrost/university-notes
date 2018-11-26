@@ -1,0 +1,186 @@
+\documentclass[polish,polish,a4paper]{article}
+\input{template/header}
+\input{template/frontpage}
+
+\title{Projektowanie efektywnych algorytmów - Projekt - Etap 1 - Sprawozdanie}
+\begin{document}
+
+\frontpage{Projektowanie Efektywnych Algorytmów}{Informatyka}{Piątek 15:15}{Programowanie dynamiczne}{SMTWT}{226203 Iwo Bujkiewicz}{}{\today}
+
+\newpage
+
+\section{Opis problemu}
+
+Jednoprocesorowy problem szeregowania zadań przy kryterium minimalizacji ważonej sumy opóźnień zadań (ang. \textit{Single machine total weighted tardiness scheduling problem}, SMTWT) zdefiniowany jest następująco:
+
+Dany jest pewien zestaw zadań, z których każde opisane jest indywidualnym numerem, ilością jednostek czasu potrzebnych do jego wykonania, wagą (priorytetem) i oczekiwanym terminem zakończenia jego wykonywania. Każde zadanie jest dostępne do wykonywania w chwili zero. Zadanie jest spóźnione, jeśli jego wykonywanie zakończy się po oczekiwanym terminie. Miara opóźnienia zadania jest równa różnicy chwili zakończenia jego wykonywania i oczekiwanego terminu zakończenia, jednak nie mniejsza, niż 0. Zadania wykonywane są bez przerwań przez pojedynczy procesor mogący wykonywać co najwyżej jedno zadanie jednocześnie. Znaleźć taką kolejność wykonywania zadań, aby zminimalizować sumę opóźnień wszystkich zadań pomnożonych przez ich wagi.
+
+\section{Metoda rozwiązania}
+\subsection{Algorytm 1}
+
+\subsection{Algorytm 2}
+
+Wykorzystany w projekcie algorytm został skonstruowany częściowo na podstawie \cite{Dynasearch}.
+
+Algorytm rozpoczyna pracę od posortowania zadań w kolejności od najwcześniejszego do najpóźniejszego oczekiwanego terminu zakończenia. Jest to część heurystyczna i daje dobrą, ułożoną najczęściej korzystniej niż losowo, bazę do działań metaheurystycznych.
+
+Następuje właściwe wyszukiwanie rozwiązania z uwzględnieniem funkcji celu. Początkowo algorytm rozpatruje podsekwencję zadań o długości 2, znajdującą się na początku całej sekwencji, a w kolejnych etapach bierze pod uwagę coraz dłuższe (o 1 zadanie na etap) podsekwencje. Na każdym etapie testuje wszystkie możliwości zamiany ostatniego elementu podsekwencji z jednym z poprzednich elementów, a następnie wykonuje taką zamianę, która daje najlepszy wynik funkcji celu (najniższą ważoną sumę opóźnień) dla danej podsekwencji, jeśli ten wynik jest lepszy od stanu aktualnego.
+
+Kluczowa dla algorytmu jest jego ostatnia część, bez której byłby on raczej mało użyteczny. Za każdym razem, kiedy wykonana zostanie zamiana, algorytm powtarza wykonanie aktualnego etapu, co rekurencyjnie powoduje powtórzenie wszystkich dotychczasowych etapów. Pozwala to uniknąć sytuacji, w której 'krytyczne' zadanie zostałoby wypchnięte na późniejszy termin realizacji, znacznie zwiększając ważoną sumę opóźnień, bez możliwości poprawy.
+
+Zadanie 'krytyczne' to takie, którego umieszczenie na dalszych pozycjach sekwencji zwiększa ważoną sumę opóźnień bardziej, niż większość pozostałych zadań. W praktyce są to zazwyczaj zadania, których waga jest stosunkowo wysoka, a dodatkowo charakteryzują się wczesnym terminem zakończenia i/lub długim czasem wykonywania. Ponowne rozpatrzenie aktualnego i poprzednich etapów sprawia, że algorytm jest w stanie dokonać poprawek w rozmieszczeniu rozważanych już wcześniej zadań, w zmienionej sytuacji. Dodatkową zaletą takiego rozwiązania jest fakt, że podczas ponownego przejścia może się okazać, że wzajemna pozycja zadań, która wcześniej nie miała znaczenia dla wyniku funkcji celu, stała się istotna i można ją poprawić. Przykładem takiej sytuacji jest wykonanie zamiany, w wyniku której z pozycji 8. na pozycję 4. przeniesione zostaje zadanie o dłuższym czasie wykonywania, niż to, które znajdowało się tam poprzednio. Jest możliwe, że przed tą zamianą zadania na pozycjach 5. i 6. nie były spóźnione, ale po zamianie są. Należy wtedy rozpatrzyć, czy zamiana zadań na pozycjach 5. i 6. nie poprawiłaby przypadkiem wyniku funkcji celu.
+
+\begin{lstlisting}[caption = Algorytm 2 - pseudokod]
+Zadanie : { numer, czas_wykonywania, waga, termin }
+
+Dane
+	$zadania : Lista (Zadanie) [1..n]
+
+Funkcja wazona_suma_opoznien($zakres) : Liczba
+	$wynik := 0
+	$chwila := 0
+	dla kazdego $i w $zakres
+		$chwila := $chwila + $zadania[$i].czas_wykonywania
+		$wynik := $wynik + max(0, $zadania[$i].termin - $chwila)
+		          * $zadania[$i].waga
+	zwroc $wynik
+Koniec
+
+Procedura znajdz_rozwiazanie($k)
+	jezeli $k > 2
+		wykonaj znajdz_rozwiazanie($k - 1)
+	
+	$najlepsza_suma_opoznien := wazona_suma_opoznien(od 1 do $k)
+	$najlepsza_pozycja := $k
+	
+	dla kazdego $i od 1 do ($k - 1)
+		zamien $zadania[$i] z $zadania[$k]
+		jezeli wazona_suma_opoznien(od 1 do $k) < $najlepsza_suma_opoznien
+			$najlepsza_suma_opoznien := wazona_suma_opoznien(od 1 do $k)
+			$najlepsza_pozycja := $i
+		zamien $zadania[$i] z $zadania[$k]
+	
+	jezeli $najlepsza_pozycja != $k
+		zamien $zadania[$najlepsza_pozycja] z $zadania[$k]
+		wykonaj znajdz_rozwiazanie($k)
+Koniec
+
+Start
+	posortuj $zadania wedlug Zadanie.termin rosnaco
+	
+	wykonaj znajdz_rozwiazanie(n)
+Koniec
+\end{lstlisting}
+
+\subsubsection{Przykład działania}
+\lstset{style=shortStyle}
+
+Rozważmy przykładową sekwencję 4 zadań:
+
+\begin{lstlisting}
+numer	czas_wykonywania	waga	termin
+1		26					1		118
+2		24					10		122
+3		79					9		133
+4		46					10		127
+\end{lstlisting}
+
+Początkowo sekwencja ma następującą postać i ważoną sumę opóźnień:
+
+\begin{lstlisting}
+{ 1, 2, 3, 4 }		480
+\end{lstlisting}
+
+Po posortowaniu według najwcześniejszego terminu otrzymujemy sekwencję z mniejszą sumą opóźnień.
+
+\begin{lstlisting}
+{ 1, 2, 4, 3 }		378
+\end{lstlisting}
+
+Rozpoczynamy rekurencję. Na początek rozważamy następującą podsekwencję:
+
+\begin{lstlisting}
+{ 1, 2 }		0
+\end{lstlisting}
+
+Żadna zamiana nie poprawi wyniku w tej podsekwencji, przechodzimy zatem do następnej.
+
+\begin{lstlisting}
+{ 1, 2, 4 }		0
+\end{lstlisting}
+
+Sytuacja się powtarza, przechodzimy znów do kolejnej podsekwencji.
+
+\begin{lstlisting}
+{ 1, 2, 4, 3 }		378
+\end{lstlisting}
+
+Rozważamy po kolei możliwości zamiany miejscami zadania nr 3 z zadaniami 1, 2 i 4. Zamiana miejscami zadań 1 i 3 daje wynik 277, 2 i 3 - 770, 4 i 3 - 480. Wynik 277 jest lepszy od aktualnego (378), wykonujemy więc zamianę zadań 1 i 3.
+
+\begin{lstlisting}
+{ 3, 2, 4, 1 }		277
+\end{lstlisting}
+
+Powtarzamy poprzednio wykonane etapy, tym razem na nowej sekwencji
+
+\begin{lstlisting}
+{ 3, 2 }		0
+{ 3, 2, 4 }		220
+\end{lstlisting}
+
+Sprawdzamy, czy możemy poprawić taką podsekwencję. Zamiana miejscami zadań 3 i 4 daje wynik 144, 2 i 4 - 270. Wynik 144 jest lepszy od aktualnego (220), wykonujemy więc zamianę zadań 3 i 4. Powtarzamy etapy.
+
+\begin{lstlisting}
+{ 4, 2, 3 }		144
+{ 4, 2 }		0
+{ 4, 2, 3 }		144
+\end{lstlisting}
+
+Sprawdzamy, czy możemy poprawić taką podsekwencję. Zamiana miejscami zadań 4 i 3 daje wynik 220, 2 i 3 - 270. Brak możliwości poprawy.
+
+\begin{lstlisting}
+{ 4, 2, 3, 1 }		201
+\end{lstlisting}
+
+Sprawdzamy, czy możemy poprawić taką podsekwencję. Zamiana miejscami zadań 4 i 1 daje wynik 378, 2 i 1 - 692, 3 i 1 - 378. Brak możliwości poprawy.
+
+W tym miejscu wychodzimy z rekurencji i działanie algorytmu się kończy. Nasz końcowy wynik to zatem:
+
+\begin{lstlisting}
+{ 4, 2, 3, 1 }		201
+\end{lstlisting}
+
+... co jest optymalną kolejnością wykonywania tych czterech zadań.
+
+\lstset{style=defaultStyle}
+\subsubsection{Opis implementacji}
+
+Do implementacji algorytmu wybrano język Java w wersji 8 \cite{JavaDocs}. W celu ułatwienia uruchamiania testów zaimportowano do projektu bibliotekę Reflections (\texttt{org.reflections}), jednak nie jest ona konieczna do poprawnego działania żadnych elementów projektu poza klasą \texttt{TestRunner}.
+
+Do przechowywania sekwencji zadań wykorzystano strukturę \texttt{ArrayList}, rozszerzoną o dodatkowe metody. Samo pojedyncze zadanie było reprezentowane przez klasę \texttt{Job}, implementującą wzorzec JavaBean, posiadającą cztery atrybuty: \texttt{id} (numer), \texttt{processingTime} (czas potrzebny do wykonania), \texttt{dueTime} (oczekiwany termin zakończenia) oraz \texttt{weight} (waga).
+
+Początkowe sortowanie heurystyczne odbywało się za pośrednictwem wbudowanej w Java API metody\newline
+\texttt{ArrayList.sort()} \cite{JavaDocs}, do której jako argument podawana była instancja specjalnego komparatora:
+
+\begin{lstlisting}[language=Java]
+public class EarliestDueDateHeuristic implements Comparator<Job> {
+	@Override
+	public int compare(Job o1, Job o2) {
+		return Comparator.<Job>comparingInt(Job::getDueTime).compare(o1, o2);
+	}
+}
+\end{lstlisting}
+
+Zamiany zadań w sekwencji wykonywane były z użyciem wbudowanej metody \texttt{Collections.swap()} \cite{JavaDocs}.
+
+Do wczytywania danych pobranych z \cite{ORLib} do testowania algorytmu użyto odpowiednio przygotowanej klasy \texttt{JobOrderLoader}.
+
+
+\section{Eksperymenty obliczeniowe}
+
+\section{Wnioski}
+
+\bibliographystyle{unsrt}
+\bibliography{stage1}
+
+\end{document}

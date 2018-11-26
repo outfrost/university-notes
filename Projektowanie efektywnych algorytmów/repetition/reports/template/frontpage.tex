@@ -1,0 +1,36 @@
+\newcommand{\name}[1]{\sffamily\bfseries\scriptsize #1}
+
+\newcommand{\frontpage}[8]{
+%% #1 - nazwa kursu
+%% #2 - kierunek
+%% #3 - termin
+%% #4 - temat
+%% #5 - problem
+%% #6 - skład grupy
+%% #7 - nr grupy
+%% #8 - data
+
+\hfill\includegraphics[width=4cm]{template/PWr.png}
+\vspace{2cm}
+
+\begin{tabular}{|p{0.72\textwidth}|p{0.28\textwidth}|}
+\hline
+\multicolumn{2}{|c|}{}\\
+\multicolumn{2}{|c|}{{\LARGE #1}}\\
+\multicolumn{2}{|c|}{}\\
+\hline
+\name{Kierunek} & \name{Termin}\\
+\multicolumn{1}{|c|}{\textit{#2}} & \multicolumn{1}{|c|}{\textit{#3}} \\
+\hline
+\name{Temat} & \name{Problem}\\
+\multicolumn{1}{|c|}{\textit{#4}} & \multicolumn{1}{|c|}{\textit{#5}} \\
+\hline
+\name{Skład grupy} & \name{Nr grupy}\\
+\multicolumn{1}{|c|}{\textit{#6}} & \multicolumn{1}{|c|}{\textit{#7}} \\
+\hline
+\name{Prowadzący} & \name{data}\\
+\multicolumn{1}{|c|}{\textit{Mgr inż. Radosław Idzikowski}} & \multicolumn{1}{|c|}{\textit{#8}} \\
+\hline
+\end{tabular}
+
+}
