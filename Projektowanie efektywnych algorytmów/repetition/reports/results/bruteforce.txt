@@ -1,0 +1,23 @@
+Completed 15 passes of brute force on 3 instance sizes
+( 0 errors )
+
+Statistics:
+
+Average search time per instance size
+10: 1511773469 ns
+11: 16345629061 ns
+
+Total time spent in brute force each pass
+5: 17893692766 ns
+6: 17892581429 ns
+7: 17861326076 ns
+8: 17777677856 ns
+9: 17801704820 ns
+10: 17851428951 ns
+11: 17814991379 ns
+12: 17766999574 ns
+13: 17849939884 ns
+14: 17882231490 ns
+
+Total analysis time: 269539856611 ns
+IO and statistics overhead: 91147282386 ns

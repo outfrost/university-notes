@@ -46,3 +46,16 @@ img + em {
 .small-table + table > tfoot > tr > td {
 	padding: 2px 4px;
 }
+
+.large ~ * {
+	font-size: 2.0em;
+}
+
+.no-justify ~ * {
+	text-align: initial;
+}
+
+.reference-list + ol > li > p,
+.reference-list + ul > li > p {
+	text-align: initial;
+}
