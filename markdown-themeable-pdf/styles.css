@@ -51,6 +51,22 @@ img + em {
 	font-size: 2.0em;
 }
 
+.large ~ h1 {
+    font-size: 4.0em;
+}
+
+.large ~ h2 {
+    font-size: 3.4em;
+}
+
+.large ~ h3 {
+    font-size: 3.0em;
+}
+
+.large ~ h4 {
+    font-size: 2.2em;
+}
+
 .no-justify ~ * {
 	text-align: initial;
 }
